@@ -51,6 +51,9 @@ gem 'spring-commands-rspec', group: [:development, :test]
 # Factory Girl FTW
 gem 'factory_girl_rails'
 
+# Coverage gem
+gem 'coveralls', require: false
+
 group :development do
   gem 'annotate'
   gem 'better_errors'
