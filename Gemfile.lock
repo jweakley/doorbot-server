@@ -76,6 +76,7 @@ GEM
     eventmachine (1.0.3)
     execjs (2.2.1)
     fastercsv (1.5.5)
+    git (1.2.8)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -205,6 +206,7 @@ DEPENDENCIES
   brakeman
   coffee-rails (~> 4.0.0)
   devise
+  git
   haml
   haml-rails
   jbuilder (~> 2.0)

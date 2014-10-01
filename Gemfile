@@ -49,6 +49,7 @@ group :development do
   gem 'better_errors'
   gem 'brakeman'
   gem 'rubocop'
+  gem 'git'
 end
 
 # Use ActiveModel has_secure_password
