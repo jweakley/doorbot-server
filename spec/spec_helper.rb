@@ -14,9 +14,17 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-
+require 'simplecov'
 require 'coveralls'
-Coveralls.wear!('rails')
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter
+]
+SimpleCov.start
+SimpleCov.start do
+  add_filter 'app/secrets'
+end
 
 require 'factory_girl_rails'
 require 'devise'

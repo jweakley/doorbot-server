@@ -53,6 +53,7 @@ gem 'factory_girl_rails'
 
 # Coverage gem
 gem 'coveralls', require: false
+gem 'simplecov', require: false, group: :test
 
 group :development do
   gem 'annotate'
