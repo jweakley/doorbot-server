@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title DoorbotServer
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %ul.menu
+      -if user_logged_in?
+        %li.logout= link_to 'Logout', destroy_user_session_url
+      -else
+        %li.login= link_to 'Login', new_user_session_url
+    %div
+      %p.notice= notice
+      %p.alert= alert
+    = yield

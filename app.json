@@ -1,0 +1,49 @@
+{
+  "name": "Doorbot Server",
+  "description": "Server to manage member access for doorbots",
+  "repository": "https://github.com/jweakley/doorbot-server",
+  "scripts": {"postdeploy": "bundle exec rake db:migrate; bundle exec rake db:seed"},
+  "success_url": "/welcome",
+  "addons": [
+    "mandrill:starter",
+    "heroku-postgresql:hobby_dev"
+  ],
+  "env": {
+    "ADMIN_EMAIL": {
+      "description": "The administrator's email address for signing in.",
+      "value": "user@example.com",
+      "required": true
+    },
+    "ADMIN_PASSWORD": {
+      "description": "The administrator's password for signing in.",
+      "value": "changeme",
+      "required": true
+    },
+    "DEVISE_EMAIL_SENDER": {
+      "description": "The email to use for the send field in automatic emails.",
+      "value": "changeme",
+      "required": true
+    },
+    "DOMAIN_NAME": {
+      "description": "Domain Name of the application",
+      "value": "myapp.herokuapp.com",
+      "required": true
+    },
+    "MANDRILL_USERNAME": {
+      "description": "The username for your mandrill addon.",
+      "value": "myapp@heroku.com",
+      "required": true
+    },
+    "MANDRILL_PASSWORD": {
+      "description": "The password for your mandrill addon.",
+      "value": "changeme",
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "description": "A secret key is used for verifying the integrity of signed cookies.",
+      "generator": "secret",
+      "required": true
+    },
+    "RAILS_ENV": "production"
+  }
+}
