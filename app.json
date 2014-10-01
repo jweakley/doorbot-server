@@ -6,7 +6,7 @@
   "success_url": "/welcome",
   "addons": [
     "mandrill:starter",
-    "heroku-postgresql:hobby_dev"
+    "heroku-postgresql:hobby-dev"
   ],
   "env": {
     "ADMIN_EMAIL": {
