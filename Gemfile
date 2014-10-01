@@ -47,7 +47,6 @@ gem 'pry-rails', group: [:development, :test]
 # RSPEC FTW
 gem 'rspec-rails', group: [:development, :test]
 gem 'spring-commands-rspec', group: [:development, :test]
-gem 'rb-fsevent', group: [:development, :test] if `uname` =~ /Darwin/
 
 # Factory Girl FTW
 gem 'factory_girl_rails'

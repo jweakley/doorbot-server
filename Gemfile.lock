@@ -146,7 +146,6 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (2.0.0)
     rake (10.3.2)
-    rb-fsevent (0.9.4)
     rdoc (4.1.2)
       json (~> 1.4)
     rspec-core (3.1.5)
@@ -242,7 +241,6 @@ DEPENDENCIES
   pry-rails
   rails (= 4.1.6)
   rails_12factor
-  rb-fsevent
   rspec-rails
   rubocop
   sass-rails (~> 4.0.3)
