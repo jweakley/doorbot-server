@@ -44,6 +44,14 @@ gem 'haml-rails'
 gem 'pry-byebug', group: [:development, :test]
 gem 'pry-rails', group: [:development, :test]
 
+# RSPEC FTW
+gem 'rspec-rails', group: [:development, :test]
+gem 'spring-commands-rspec', group: [:development, :test]
+gem 'rb-fsevent', group: [:development, :test] if `uname` =~ /Darwin/
+
+# Factory Girl FTW
+gem 'factory_girl_rails'
+
 group :development do
   gem 'annotate'
   gem 'better_errors'
