@@ -40,6 +40,17 @@ gem 'devise'
 gem 'haml'
 gem 'haml-rails'
 
+# Pry FTW
+gem 'pry-byebug', group: [:development, :test]
+gem 'pry-rails', group: [:development, :test]
+
+group :development do
+  gem 'annotate'
+  gem 'better_errors'
+  gem 'brakeman'
+  gem 'rubocop'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

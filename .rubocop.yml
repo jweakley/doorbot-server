@@ -1,0 +1,20 @@
+LineLength:
+  Enabled: true
+  Max: 100
+LambdaCall:
+  Enabled: false
+  Exclude:
+    - !ruby/regexp /\.(?:jbuilder)$/
+Documentation:
+  Enabled: false
+AllCops:
+  Includes:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Excludes:
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'doc/**/*'
+    - 'test/**/*'
