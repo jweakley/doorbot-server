@@ -15,6 +15,9 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+require 'coveralls'
+Coveralls.wear!('rails')
+
 require 'factory_girl_rails'
 require 'devise'
 
