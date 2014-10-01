@@ -24,6 +24,11 @@
       "value": "changeme",
       "required": true
     },
+    "DEVISE_SECRET_KEY": {
+      "description": "The secret key used by Devise. Devise uses this key to generate random tokens.",
+      "generator": "secret",
+      "required": true
+    },
     "DOMAIN_NAME": {
       "description": "Domain Name of the application",
       "value": "myapp.herokuapp.com",
