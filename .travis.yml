@@ -7,6 +7,9 @@ rvm:
   #- rbx-19mode
 # uncomment this line if your project needs to run something other than `rake`:
 # script: bundle exec rspec spec
+before_script:
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database travis_ci_test;' -U postgres
 
 # whitelist
 branches:
