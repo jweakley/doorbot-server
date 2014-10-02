@@ -9,6 +9,20 @@ RSpec.describe DashboardController, type: :controller do
         expect(response).to have_http_status(:success)
       end
     end
+
+    describe 'with admin signed in' do
+      render_views
+      before do
+        @admin = create(:admin)
+        sign_in @admin
+      end
+
+      it 'shows version' do
+        current_version = File.open("#{Rails.root}/VERSION",  &:readline).gsub(/[^0-9a-z.]/i, '')
+        get :index
+        expect(response.body).to match /Current version: #{current_version}/
+      end
+    end
   end
 
 end

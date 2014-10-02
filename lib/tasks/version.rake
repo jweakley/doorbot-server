@@ -20,22 +20,24 @@ end
 def read_version
   unless File.exists?('VERSION')
     File.new('VERSION', 'w').close()
-    write_version('1.0.0')
+    write_version('0.0.0', true)
   end
   File.read('VERSION')
 rescue => e
   raise "VERSION file not found or unreadable."
 end
 
-def write_version(version)
+def write_version(version, version_only=false)
   valid? version
   begin
     File.open('VERSION', 'w') do |file|
       file.puts correct_version(version)
     end
-    tag_git_version(version)
-    commit_hashes = fetch_git_commit_hashes(version)
-    stub_changelog(version, commit_hashes)
+    unless version_only
+      tag_git_version(version)
+      commit_hashes = fetch_git_commit_hashes(version)
+      stub_changelog(version, commit_hashes)
+    end
   rescue
     raise "VERSION file not found or unwritable."
   end

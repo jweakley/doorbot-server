@@ -36,6 +36,9 @@ gem 'thin'
 # User authentication
 gem 'devise'
 
+# Twitter Bootstrap
+gem 'twitter-bootstrap-rails'
+
 # Haml FTW
 gem 'haml'
 gem 'haml-rails'
