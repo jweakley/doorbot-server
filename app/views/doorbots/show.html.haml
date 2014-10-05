@@ -1,0 +1,10 @@
+.col-md-1
+  %h1= @doorbot.nickname
+  %p
+    %b Api Key:
+    = @doorbot.api_key
+  = link_to 'Setup on RaspberryPi', 'https://github.com/jweakley/doorbot-pi', target: '_blank'
+
+  = link_to 'Edit', edit_doorbot_path(@doorbot)
+  \|
+  = link_to 'Back', doorbots_path

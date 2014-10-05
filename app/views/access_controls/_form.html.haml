@@ -1,0 +1,15 @@
+= form_for @access_control do |f|
+  - if @access_control.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@access_control.errors.count, "error")} prohibited this access_control from being saved:"
+      %ul
+        - @access_control.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :doorbot_id
+    = f.collection_select :doorbot_id, @doorbots, :id, :nickname
+    = f.label :credential_id
+    = f.collection_select :credential_id, @credentials, :id, :nickname
+  .actions
+    = f.submit 'Save'

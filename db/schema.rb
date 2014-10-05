@@ -11,10 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141001055255) do
+ActiveRecord::Schema.define(version: 20141014005441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "access_controls", force: true do |t|
+    t.integer  "doorbot_id"
+    t.integer  "credential_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "access_controls", ["credential_id"], name: "index_access_controls_on_credential_id", using: :btree
+  add_index "access_controls", ["doorbot_id"], name: "index_access_controls_on_doorbot_id", using: :btree
+
+  create_table "credentials", force: true do |t|
+    t.integer  "form"
+    t.string   "nickname"
+    t.string   "key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "doorbots", force: true do |t|
+    t.string   "nickname"
+    t.string   "api_key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "doorbots", ["api_key"], name: "index_doorbots_on_api_key", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -1,6 +1,5 @@
-%h1 Dashboard
 - if user_signed_in?
-  .version Current version: #{DoorbotServer::Application::VERSION}
+  =render partial: 'signed_in', locals: { doorbots: @doorbots }
 - else
   %div
     %p Please sign in

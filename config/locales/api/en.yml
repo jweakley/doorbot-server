@@ -1,0 +1,11 @@
+en:
+  api:
+    errors:
+      not_found: "API end-point does not exist."
+      resource_not_found: "Specified resource does not exist."
+      only_json_or_xml: "Request not formatted in JSON."
+      negative_page: "Invalid page number (can't be negative)."
+      deprecation_error: "This version of the API has been removed."
+      parameter_missing: "'%{parameter}' parameter is required."
+      unable_to_authenticate: "Unable to authenticate with the provided credentials."
+      token_denied: "HTTP Token: Access denied."

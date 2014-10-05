@@ -1,0 +1,21 @@
+%h1 Listing doorbots
+
+%table.table.table-striped
+  %tr
+    %th Nickname
+    %th Api Key
+    %th
+    %th
+    %th
+
+  - @doorbots.each do |doorbot|
+    %tr
+      %td= doorbot.nickname
+      %td= doorbot.api_key
+      %td= link_to 'Show', doorbot
+      %td= link_to 'Edit', edit_doorbot_path(doorbot)
+      %td= link_to 'Destroy', doorbot, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Doorbot', new_doorbot_path

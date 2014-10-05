@@ -1,0 +1,21 @@
+%h1 Listing access_controls
+
+%table
+  %tr
+    %th Doorbot
+    %th Credential
+    %th
+    %th
+    %th
+
+  - @access_controls.each do |access_control|
+    %tr
+      %td= access_control.doorbot
+      %td= access_control.credential
+      %td= link_to 'Show', access_control
+      %td= link_to 'Edit', edit_access_control_path(access_control)
+      %td= link_to 'Destroy', access_control, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Access control', new_access_control_path
