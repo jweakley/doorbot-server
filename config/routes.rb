@@ -1,9 +1,20 @@
 Rails.application.routes.draw do
-  resource :users, only: [:edit, :update]
+  current_api_routes = lambda do
+    resources :credentials, only: [:show]
+  end
 
-  get '/dashboard', to: 'dashboard#index', as: 'dashboard'
+  namespace :api do
+    namespace :v1, &current_api_routes
+  end
 
   devise_for :users
 
+  resources :access_controls
+  resources :credentials
+  resources :doorbots
+  resources :users, only: [:edit, :update]
+
+  get 'versions', to: 'versions#index'
+  get 'dashboard', to: 'dashboard#index', as: 'dashboard'
   root 'dashboard#index'
 end

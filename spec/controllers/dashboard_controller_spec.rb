@@ -20,7 +20,7 @@ RSpec.describe DashboardController, type: :controller do
       it 'shows version' do
         current_version = File.open("#{Rails.root}/VERSION",  &:readline).gsub(/[^0-9a-z.]/i, '')
         get :index
-        expect(response.body).to match /Current version: #{current_version}/
+        expect(response.body).to match(/Checking Version.../)
       end
     end
   end

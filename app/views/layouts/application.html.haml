@@ -20,13 +20,26 @@
 
   %body
     =nav_bar fixed: :top, responsive: true do
-      =menu_group do
+      =menu_group pull: :left do
         =menu_item 'Dashboard', dashboard_url
-        =drop_down 'Account' do
-          -if user_signed_in?
-            =menu_item 'Edit Account', edit_users_url(current_user)
+        -if user_signed_in?
+          =drop_down 'Doorbots' do
+            =menu_item 'Index', doorbots_url
+            =menu_item 'New', new_doorbot_url
+          =drop_down 'Credentials' do
+            =menu_item 'Index', credentials_url
+            =menu_item 'New', new_credential_url
+          =drop_down 'Access Control' do
+            =menu_item 'Index', access_controls_url
+            =menu_item 'New', new_access_control_url
+      =menu_group pull: :right do
+        -if user_signed_in?
+          =drop_down 'Account' do
+            - if policy(current_user).edit?
+              =menu_item 'Edit Account', edit_user_url(current_user)
             =menu_item 'Sign Out', destroy_user_session_url
-          -else
+        -else
+          =drop_down 'Sign In' do
             .navbar-form.pull-right
               = form_for User.new, url: user_session_url do |f|
                 %p= f.text_field :email

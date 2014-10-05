@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Doorbot:
+  = @access_control.doorbot
+%p
+  %b Credential:
+  = @access_control.credential
+
+= link_to 'Edit', edit_access_control_path(@access_control)
+\|
+= link_to 'Back', access_controls_path

@@ -1,0 +1,9 @@
+= form_for @doorbot, html: { class: "form form-horizontal doorbot" } do |f|
+  .form-group
+    = f.label :nickname, class: 'control-label'
+    .controls
+      = f.text_field :nickname
+    = error_span(@doorbot[:nickname])
+    - f.object.errors[:nickname].each do |error|
+      %mark.error= error
+  = f.submit nil,class: 'btn btn-primary'

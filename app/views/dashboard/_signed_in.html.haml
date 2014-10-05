@@ -1,0 +1,12 @@
+%h1 Dashboard
+.container-fluid
+  .container-fluid
+    %h2 Doorbot Server Software
+    #version-badge Checking Version...
+  .container-fluid
+    %h2 Doorbots
+    -if @doorbots.any?
+      %p Doorbot added
+    -else
+      %p No doorbots! Add some #{link_to('here', new_doorbot_url)}
+
