@@ -15,7 +15,7 @@ Doorbot Server is a rails app that serves as the authority on who can access doo
 ### Features:
 - [x] One click deploy to heroku
 - [ ] Straightforward version updating
-- [ ] Connect any number of Doorbot Pies
+- [x] Connect any number of Doorbot Pies
 - [x] Ability to create different access zones
 - [x] Ability to manage access credentials (RFID cards)
 - [ ] Ability to setup access schedules
