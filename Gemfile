@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '2.1.4'
+ruby '2.1.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~>4.1'
+gem 'rails', '~>4.1.8'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -18,7 +18,7 @@ gem 'coffee-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+#gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -46,8 +46,8 @@ gem 'responders'
 gem 'twitter-bootstrap-rails'
 
 # Haml FTW
-gem 'haml'
-gem 'haml-rails'
+gem 'haml', '~> 4.0.6'
+gem 'haml-rails', '~> 0.6.0'
 
 # Pry FTW
 gem 'pry-byebug', group: [:development, :test]
@@ -61,7 +61,7 @@ gem 'spring-commands-rspec', group: [:development, :test]
 gem 'factory_girl_rails'
 
 # Coverage gem
-gem 'coveralls', require: false
+gem 'coveralls', '~> 0.7.2', require: false
 gem 'simplecov', require: false, group: :test
 
 group :development do
