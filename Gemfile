@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.1.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~>4.1.8'
+gem 'rails', '~>4.2'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -47,7 +47,7 @@ gem 'twitter-bootstrap-rails'
 
 # Haml FTW
 gem 'haml', '~> 4.0.6'
-gem 'haml-rails', '~> 0.6.0'
+gem 'haml-rails', '~> 0.7.0'
 
 # Pry FTW
 gem 'pry-byebug', group: [:development, :test]
