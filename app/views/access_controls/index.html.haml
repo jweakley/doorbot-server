@@ -1,6 +1,6 @@
-%h1 Listing access_controls
+%h1 Listing Access Control
 
-%table
+%table.table.table-striped
   %tr
     %th Doorbot
     %th Credential
@@ -10,8 +10,8 @@
 
   - @access_controls.each do |access_control|
     %tr
-      %td= access_control.doorbot
-      %td= access_control.credential
+      %td= access_control.doorbot.nickname
+      %td= access_control.credential.nickname
       %td= link_to 'Show', access_control
       %td= link_to 'Edit', edit_access_control_path(access_control)
       %td= link_to 'Destroy', access_control, :method => :delete, :data => { :confirm => 'Are you sure?' }
