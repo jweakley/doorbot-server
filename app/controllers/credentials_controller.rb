@@ -14,7 +14,14 @@ class CredentialsController < ApplicationController
   end
 
   def new
-    @credential = Credential.new
+    if params[:key].blank?
+      @credential = Credential.new
+    else
+      @credential = Credential.new(key: params[:key]).tap do |cred|
+        cred.access_controls.build
+      end
+    end
+    @doorbot = Doorbot.find_by(id: params[:doorbot_id])
     authorize @credential
     respond_with(@credential)
   end
@@ -48,6 +55,8 @@ class CredentialsController < ApplicationController
     end
 
     def credential_params
-      params.require(:credential).permit(:type, :nickname, :key)
+      params.require(:credential).permit(
+        *policy(@credential || Credential).permitted_attributes
+      )
     end
 end

@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141014005441) do
+ActiveRecord::Schema.define(version: 20150210220817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "access_controls", force: true do |t|
+  create_table "access_controls", force: :cascade do |t|
     t.integer  "doorbot_id"
     t.integer  "credential_id"
     t.datetime "created_at"
@@ -26,35 +26,46 @@ ActiveRecord::Schema.define(version: 20141014005441) do
   add_index "access_controls", ["credential_id"], name: "index_access_controls_on_credential_id", using: :btree
   add_index "access_controls", ["doorbot_id"], name: "index_access_controls_on_doorbot_id", using: :btree
 
-  create_table "credentials", force: true do |t|
-    t.integer  "form"
-    t.string   "nickname"
+  create_table "access_requests", force: :cascade do |t|
+    t.string   "form"
     t.string   "key"
+    t.integer  "doorbot_id"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.boolean  "access_granted", default: false
+  end
+
+  add_index "access_requests", ["doorbot_id"], name: "index_access_requests_on_doorbot_id", using: :btree
+
+  create_table "credentials", force: :cascade do |t|
+    t.integer  "form"
+    t.string   "nickname",   limit: 255
+    t.string   "key",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "doorbots", force: true do |t|
-    t.string   "nickname"
-    t.string   "api_key"
+  create_table "doorbots", force: :cascade do |t|
+    t.string   "nickname",   limit: 255
+    t.string   "api_key",    limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "doorbots", ["api_key"], name: "index_doorbots_on_api_key", unique: true, using: :btree
 
-  create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                      default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.integer  "failed_attempts",        default: 0,  null: false
-    t.string   "unlock_token"
+    t.integer  "failed_attempts",                    default: 0,  null: false
+    t.string   "unlock_token",           limit: 255
     t.datetime "locked_at"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -12,6 +12,6 @@ class CredentialPolicy < ApplicationPolicy
   end
 
   def permitted_attributes
-    [:nickname, :key]
+    [:nickname, :key, access_controls_attributes: [:doorbot_id]]
   end
 end

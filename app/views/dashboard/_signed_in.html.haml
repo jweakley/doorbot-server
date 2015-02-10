@@ -6,7 +6,9 @@
   .container-fluid
     %h2 Doorbots
     -if @doorbots.any?
-      %p Doorbot added
+      %li
+        - @doorbots.each do |doorbot|
+          %ul=link_to doorbot.nickname, doorbot
     -else
       %p No doorbots! Add some #{link_to('here', new_doorbot_url)}
 

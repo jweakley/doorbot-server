@@ -3,8 +3,32 @@
   %p
     %b Api Key:
     = @doorbot.api_key
-  = link_to 'Setup on RaspberryPi', 'https://github.com/jweakley/doorbot-pi', target: '_blank'
+  %p
+    = link_to 'Setup Guide for RaspberryPi', 'https://github.com/jweakley/doorbot-pi', target: '_blank'
+  %p
+    = link_to 'Edit', edit_doorbot_path(@doorbot)
 
-  = link_to 'Edit', edit_doorbot_path(@doorbot)
-  \|
-  = link_to 'Back', doorbots_path
+  %h2 10 Most Recent Requests
+  %table.table.table-striped
+    %tr
+      %th Access Granted
+      %th Credential
+      %th Time of Request
+      %th
+
+    - @access_requests.each do |access_request|
+      %tr
+        %td
+          - if access_request.access_granted
+            %span Granted
+          - else
+            %span Denied
+        %td
+          - if access_request.credential.blank?
+            %span="Unknown: #{access_request.form} | #{access_request.key}"
+          - else
+            %span=access_request.credential.nickname
+        %td= access_request.created_at.to_formatted_s(:long)
+        %td
+          - if access_request.credential.blank?
+            =link_to 'Create New Credential', new_credential_path(form: access_request.form, key: access_request.key, doorbot_id: @doorbot.id)

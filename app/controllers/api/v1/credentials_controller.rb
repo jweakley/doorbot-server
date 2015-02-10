@@ -6,6 +6,11 @@ module Api
           form: params[:form],
           key: params[:id]
         )
+        current_user.access_requests.create(
+          form: params[:form],
+          key: params[:id],
+          access_granted: !@credential.blank?
+        )
         if(@credential.blank?)
           render_error_with_message('Invalid Credentials')
         else
