@@ -48,6 +48,7 @@
             .navbar-form=link_to 'Forgot Password?', new_user_password_path
     = bootstrap_flash
     .container
-      =yield
+      .col-xs-12
+        =yield
       %footer
         %p &copy; Company 2014
