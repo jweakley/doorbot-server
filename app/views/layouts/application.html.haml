@@ -32,6 +32,7 @@
           =drop_down 'Access Control' do
             =menu_item 'Index', access_controls_url
             =menu_item 'New', new_access_control_url
+          =menu_item 'Access Requests', access_requests_url
       =menu_group pull: :right do
         -if user_signed_in?
           =drop_down 'Account' do

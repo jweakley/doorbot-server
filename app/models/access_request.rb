@@ -1,5 +1,6 @@
 class AccessRequest < ActiveRecord::Base
   belongs_to :doorbot
+  delegate :nickname, to: :doorbot, prefix: true
 
   def credential
     Credential.find_by(form: form, key: key)

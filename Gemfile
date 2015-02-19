@@ -49,6 +49,10 @@ gem 'twitter-bootstrap-rails'
 gem 'haml', '~> 4.0.6'
 gem 'haml-rails', '~> 0.7.0'
 
+#pagination
+gem 'kaminari'
+gem 'kaminari-bootstrap', '~> 3.0.1'
+
 # Pry FTW
 gem 'pry-byebug', group: [:development, :test]
 gem 'pry-rails', group: [:development, :test]

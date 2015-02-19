@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :access_controls
+  resources :access_requests, only: [:index]
   resources :credentials
   resources :doorbots
   resources :users, only: [:edit, :update]
