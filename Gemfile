@@ -30,6 +30,9 @@ gem 'spring',        group: :development
 # Heroku gems
 gem 'rails_12factor', group: :production
 
+# Auditing
+gem 'paper_trail'
+
 # Thin server
 gem 'thin'
 

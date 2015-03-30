@@ -1,4 +1,5 @@
 class AccessControl < ActiveRecord::Base
+  has_paper_trail
   belongs_to :doorbot
   belongs_to :credential
 end

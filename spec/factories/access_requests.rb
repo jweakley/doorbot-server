@@ -2,7 +2,7 @@
 #
 # Table name: access_requests
 #
-#  access_granted :boolean          default("false")
+#  access_granted :boolean          default(FALSE)
 #  created_at     :datetime         not null
 #  doorbot_id     :integer          indexed
 #  form           :string
