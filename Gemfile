@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.1.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~>4.2'
+gem 'rails', '~>4.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -50,7 +50,7 @@ gem 'twitter-bootstrap-rails'
 
 # Haml FTW
 gem 'haml', '~> 4.0.6'
-gem 'haml-rails', '~> 0.7.0'
+gem 'haml-rails', '>= 0.7.0'
 
 #pagination
 gem 'kaminari'
@@ -77,6 +77,7 @@ group :development do
   gem 'brakeman'
   gem 'rubocop'
   gem 'git'
+  gem 'web-console', '~> 2.0'
 end
 
 # Use ActiveModel has_secure_password
