@@ -37,6 +37,7 @@ Doorbot Server is a rails app that serves as the authority on who can access doo
 - [haml-rails](https://github.com/indirect/haml-rails) Adds [haml](https://github.com/haml/haml) generators to rails. Alternative to ERB (Embedded RuBy).
 - [responders](https://github.com/plataformatec/responders) A set of Rails responders.
 - [kaminari](https://github.com/amatsuda/kaminari) Solution for pagination.
+- [paper_trail](https://github.com/airblade/paper_trail) Solution for tracking who did what.
 
 ### Development and Testing
 - [pry-rails](https://github.com/rweng/pry-rails): Causes Rails console to open Pry as an irb alternative.
