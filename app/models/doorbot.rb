@@ -3,8 +3,10 @@ class Doorbot < ActiveRecord::Base
   before_validation :generate_key
 
   validates :api_key, presence: true, uniqueness: true
+  validates :nickname, presence: true
 
   has_many :access_controls
+  has_many :access_requests
   has_many :credentials, through: :access_controls
 
   protected

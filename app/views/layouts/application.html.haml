@@ -32,6 +32,7 @@
           =drop_down 'Access Control' do
             =menu_item 'Index', access_controls_url
             =menu_item 'New', new_access_control_url
+          =menu_item 'Access Requests', access_requests_url
       =menu_group pull: :right do
         -if user_signed_in?
           =drop_down 'Account' do
@@ -40,13 +41,15 @@
             =menu_item 'Sign Out', destroy_user_session_url
         -else
           =drop_down 'Sign In' do
-            .navbar-form.pull-right
+            .navbar-form
               = form_for User.new, url: user_session_url do |f|
                 %p= f.text_field :email
                 %p= f.password_field :password
                 %p= f.submit 'Sign In'
+            .navbar-form=link_to 'Forgot Password?', new_user_password_path
     = bootstrap_flash
     .container
-      =yield
+      .col-xs-12
+        =yield
       %footer
         %p &copy; Company 2014

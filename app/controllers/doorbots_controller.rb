@@ -10,6 +10,8 @@ class DoorbotsController < ApplicationController
 
   def show
     authorize @doorbot
+    @access_requests = @doorbot.access_requests
+      .order(:created_at).reverse_order.limit(10)
     respond_with(@doorbot)
   end
 

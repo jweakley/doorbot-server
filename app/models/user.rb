@@ -21,6 +21,7 @@
 #
 
 class User < ActiveRecord::Base
+  has_paper_trail
   # Include default devise modules. Others available are:
   devise :database_authenticatable, :timeoutable, :lockable,
          :recoverable, :trackable, :validatable

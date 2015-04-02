@@ -1,9 +1,17 @@
 class Credential < ActiveRecord::Base
-  enum form: [:rfid]
-  after_initialize :set_default_form, if: :new_record?
+  has_paper_trail
+  has_many :access_controls
+  accepts_nested_attributes_for :access_controls
 
-  def set_default_form
+  enum form: [:rfid]
+  after_initialize :set_default_attributes, if: :new_record?
+
+  validates :nickname, presence: true
+  validates :key, presence: true, uniqueness: true
+
+  def set_default_attributes
     self.form ||= :rfid
+    self.nickname ||= "Keycard #{(Credential.last.try(:id) || 0 ) + 1}"
   end
 end
 

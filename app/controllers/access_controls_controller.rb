@@ -15,7 +15,10 @@ class AccessControlsController < ApplicationController
   end
 
   def new
-    @access_control = AccessControl.new
+    @access_control = AccessControl.new(
+      credential_id: params[:credential_id],
+      doorbot_id: params[:doorbot_id]
+    )
     authorize @access_control
     respond_with(@access_control)
   end
