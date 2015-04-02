@@ -45,6 +45,9 @@ gem 'pundit'
 # DRY up controllers
 gem 'responders'
 
+# New Relic Monitoring
+gem 'newrelic_rpm'
+
 # Twitter Bootstrap
 gem 'twitter-bootstrap-rails'
 
