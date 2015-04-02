@@ -23,6 +23,8 @@ Doorbot Server is a rails app that serves as the authority on who can access doo
 ## Want to get this up and running?
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
+## How To Use
+[Doorbot Wiki](https://github.com/jweakley/doorbot-server/wiki)
 ## Badge Sources
 - [Gemnasium](https://gemnasium.com/) Dependency monitoring.
 - [Travis CI](https://travis-ci.com/) Automatic testing.
