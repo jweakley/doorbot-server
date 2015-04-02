@@ -31,3 +31,5 @@
       %td
         - if access_request.credential.blank?
           =link_to 'Create New Credential', new_credential_path(form: access_request.form, key: access_request.key, doorbot_id: @doorbot.id)
+        - elsif !access_request.access_control_exists?
+          =link_to 'Create New Access Control', new_access_control_path(credential_id: access_request.credential.id, doorbot_id: @doorbot.id)

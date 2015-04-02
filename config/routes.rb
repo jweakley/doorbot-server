@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :credentials
   resources :doorbots
   resources :users, only: [:edit, :update]
+  get 'getting-started', to: 'getting_started#index'
 
   get 'versions', to: 'versions#index'
   get 'dashboard', to: 'dashboard#index', as: 'dashboard'

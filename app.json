@@ -3,10 +3,11 @@
   "description": "Server to manage member access for doorbots",
   "repository": "https://github.com/jweakley/doorbot-server",
   "scripts": {"postdeploy": "bundle exec rake db:migrate; bundle exec rake db:seed"},
-  "success_url": "/welcome",
+  "success_url": "/getting-started",
   "addons": [
     "mandrill:starter",
-    "heroku-postgresql:hobby-dev"
+    "heroku-postgresql:hobby-dev",
+    "newrelic:wayne"
   ],
   "env": {
     "ADMIN_EMAIL": {
@@ -47,6 +48,11 @@
     "SECRET_KEY_BASE": {
       "description": "A secret key is used for verifying the integrity of signed cookies.",
       "generator": "secret",
+      "required": true
+    },
+    "NEW_RELIC_LICENSE_KEY": {
+      "description": "The license for new relic.",
+      "value": "changeme",
       "required": true
     },
     "RAILS_ENV": "production"

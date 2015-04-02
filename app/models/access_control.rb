@@ -1,7 +1,9 @@
 class AccessControl < ActiveRecord::Base
   has_paper_trail
   belongs_to :doorbot
+  delegate :nickname, to: :doorbot, prefix: true
   belongs_to :credential
+  delegate :nickname, to: :credential, prefix: true
 end
 
 # == Schema Information

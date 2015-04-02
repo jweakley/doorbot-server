@@ -2,10 +2,10 @@
 
 %p
   %b Doorbot:
-  = @access_control.doorbot
+  =link_to @access_control.doorbot_nickname, @access_control.doorbot
 %p
   %b Credential:
-  = @access_control.credential
+  =link_to @access_control.credential_nickname, @access_control.credential
 
 = link_to 'Edit', edit_access_control_path(@access_control)
 \|

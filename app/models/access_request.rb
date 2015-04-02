@@ -5,6 +5,10 @@ class AccessRequest < ActiveRecord::Base
   def credential
     Credential.find_by(form: form, key: key)
   end
+
+  def access_control_exists?
+    AccessControl.where(credential: credential, doorbot: doorbot).exists?
+  end
 end
 
 # == Schema Information
