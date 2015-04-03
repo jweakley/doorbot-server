@@ -71,7 +71,7 @@ gem 'spring-commands-rspec', group: [:development, :test]
 gem 'factory_girl_rails'
 
 # Coverage gem
-gem 'coveralls', '~> 0.7.2', require: false
+gem 'coveralls', '~> 0.8.0', require: false
 gem 'simplecov', require: false, group: :test
 
 group :development do
