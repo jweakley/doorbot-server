@@ -50,11 +50,6 @@
       "generator": "secret",
       "required": true
     },
-    "NEW_RELIC_LICENSE_KEY": {
-      "description": "The license for new relic.",
-      "value": "changeme",
-      "required": true
-    },
     "RAILS_ENV": "production"
   }
 }
