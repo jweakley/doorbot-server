@@ -1,0 +1,12 @@
+%h2 Previous versions
+%table.table.table-striped
+  %tr
+    %th Whodunnit
+    %th Event
+    %th When
+
+  - model.versions.each do |version|
+    %tr
+      %td= User.find_by_id(version.whodunnit).try(:email)
+      %td= version.event.titleize
+      %td= version.created_at.in_time_zone('America/Los_Angeles').to_formatted_s(:rfc822)

@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
-ruby '2.1.5'
+Dir.chdir(File.dirname(__FILE__)) do
+  File.open('.ruby-version', "rb") do |file|
+    ruby file.read.strip
+  end
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~>4.2.1'
@@ -25,7 +29,7 @@ gem 'jbuilder'
 gem 'sdoc',         group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+#gem 'spring',        group: :development
 
 # Heroku gems
 gem 'rails_12factor', group: :production
@@ -44,9 +48,6 @@ gem 'pundit'
 
 # DRY up controllers
 gem 'responders'
-
-# New Relic Monitoring
-gem 'newrelic_rpm'
 
 # Twitter Bootstrap
 gem 'twitter-bootstrap-rails'
