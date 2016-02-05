@@ -62,12 +62,13 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.mandrillapp.com',
+    address: 'smtp.sendgrid.com',
     port: 587,
-    user_name: Rails.application.secrets.mandrill_username,
-    password: Rails.application.secrets.mandrill_password,
+    user_name: Rails.application.secrets.sendgrid_username,
+    password: Rails.application.secrets.sendgrid_password,
     domain: 'heroku.com',
-    authentication: :plain
+    authentication: :plain,
+    enable_starttls_auto: true
   }
   config.action_mailer.default_url_options = {
     host: Rails.application.secrets.domain_name
