@@ -81,7 +81,7 @@ group :development do
   gem 'brakeman'
   gem 'rubocop'
   gem 'git'
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 3.0'
 end
 
 # Use ActiveModel has_secure_password
