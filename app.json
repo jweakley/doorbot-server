@@ -5,7 +5,7 @@
   "scripts": {"postdeploy": "bundle exec rake db:migrate; bundle exec rake db:seed"},
   "success_url": "/getting-started",
   "addons": [
-    "mandrill:starter",
+    "sendgrid:starter",
     "heroku-postgresql:hobby-dev",
     "newrelic:wayne"
   ],
@@ -35,13 +35,13 @@
       "value": "myapp.herokuapp.com",
       "required": true
     },
-    "MANDRILL_USERNAME": {
-      "description": "The username for your mandrill addon.",
+    "SENDGRID_USERNAME": {
+      "description": "The username for your sendgrid addon.",
       "value": "myapp@heroku.com",
       "required": true
     },
-    "MANDRILL_PASSWORD": {
-      "description": "The password for your mandrill addon.",
+    "SENDGRID_PASSWORD": {
+      "description": "The password for your sendgrid addon.",
       "value": "changeme",
       "required": true
     },
